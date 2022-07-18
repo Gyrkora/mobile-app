@@ -13,11 +13,18 @@ export default function App() {
 
 	const onHandlerChangeItem = (text) => setTextItem(text)
 	const onHanlderChangeDef = (def) => setDefinition(def)
+
+	let uniqueId
 	const onHanlderAddItem = () => {
 		setItemList((currentItems) => [
 			...currentItems,
-			{ id: itemList.length + 1, value: textItem, definition: definition },
+			{
+				id: Math.floor(Math.random() * Date.now()),
+				value: textItem,
+				definition: definition,
+			},
 		])
+
 		setTextItem('')
 		setDefinition('')
 	}

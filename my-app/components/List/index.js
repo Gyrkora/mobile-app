@@ -16,7 +16,7 @@ export default function List(props) {
 					<Text style={styles.listDefinition}>{data.item.definition} </Text>
 				</TouchableOpacity>
 			)}
-			// showsHorizontalScrollIndicator={false}
+			showsHorizontalScrollIndicator={false}
 			keyExtractor={(item) => item.id}
 		/>
 	)
