@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-export default function List(props) {
+function List(props) {
 	const { itemList, onHandlerModal } = props
 
 	return (
@@ -43,3 +43,5 @@ const styles = StyleSheet.create({
 		color: '#1154B3',
 	},
 })
+
+export default List

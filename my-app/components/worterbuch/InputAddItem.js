@@ -1,6 +1,6 @@
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
 
-export default function InputAddItem(props) {
+function InputAddItem(props) {
 	const {
 		textItem,
 		onHandlerChangeItem,
@@ -61,3 +61,5 @@ const styles = StyleSheet.create({
 		color: '#B35C22',
 	},
 })
+
+export default InputAddItem
