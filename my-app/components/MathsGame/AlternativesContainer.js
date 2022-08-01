@@ -8,22 +8,8 @@ const AlternativesContainer = (props) => {
 
 	return (
 		<View style={styles.container}>
-			<View
-				style={styles.altContainer}
-				onPress={() => {
-					prueba()
-				}}
-			>
-				<Text style={{ ...styles.alternatives, color: 'red' }}>
-					{props.suma}
-				</Text>
-			</View>
 			<View style={styles.altContainer}>
-				<Text style={styles.alternatives}>{props.random}</Text>
-			</View>
-
-			<View style={styles.altContainer}>
-				<Text style={styles.alternatives}>{props.random}</Text>
+				<Text style={styles.alternatives}>{props.valuesArray}</Text>
 			</View>
 		</View>
 	)
