@@ -8,7 +8,7 @@ const AddContainer = (props) => {
 				<Text style={styles.added}> {props.randomValue1}</Text>
 			</View>
 			<View>
-				<Text style={{ ...styles.sumaSymbol }}>+</Text>
+				<Text style={{ ...styles.sumaSymbol }}>{props.symbol}</Text>
 			</View>
 			<View style={{ ...styles.addedContainer }}>
 				<Text style={styles.added}> {props.randomValue2}</Text>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-evenly',
 		alignContent: 'center',
 		padding: 30,
-		marginTop: 90,
+		marginTop: 40,
 		marginBottom: 60,
 		borderRadius: 10,
 	},
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		textAlign: 'center',
 		margin: 7,
+		// backgroundColor:
 		backgroundColor: colors.pink,
 		borderRadius: 10,
 	},
