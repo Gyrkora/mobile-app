@@ -4,8 +4,16 @@ import AddNumbers from './pages/AddNumbers'
 import Worterbuch from './pages/Wörterbuch'
 import colors from './constants/colors'
 import MinusNumbers from './pages/MinusNumbers'
+import { useFonts } from 'expo-font'
+import AppLoading from 'expo-app-loading'
 
 export default function App() {
+	const [loaded] = useFonts({
+		EducBold: require('./assets/fonts/EduVICWANTBeginner-Bold.ttf'),
+		EducMedium: require('./assets/fonts/EduVICWANTBeginner-Medium.ttf'),
+		EducRegular: require('./assets/fonts/EduVICWANTBeginner-Regular.ttf'),
+		EducSemibold: require('./assets/fonts/EduVICWANTBeginner-SemiBold.ttf'),
+	})
 	const [answer, setAnswer] = useState()
 	let score = 0
 
@@ -20,9 +28,13 @@ export default function App() {
 		)
 	}
 
+	if (!loaded) {
+		return <AppLoading />
+	}
+
 	return (
 		<View>
-			<Text style={styles.header}>Este es el inicio</Text>
+			<Text style={styles.header}>Practica matemáticas</Text>
 			{content}
 		</View>
 	)

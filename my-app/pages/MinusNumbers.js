@@ -22,11 +22,15 @@ const MinusNumbers = (props) => {
 
 	return (
 		<View>
-			<AddContainer
-				randomValue1={randomValue1}
-				randomValue2={randomValue2}
-				symbol={'-'}
-			/>
+			<View style={styles.screen}>
+				<AddContainer
+					randomValue1={randomValue1}
+					randomValue2={randomValue2}
+					symbol={'-'}
+					title={'Resta'}
+				/>
+			</View>
+
 			<View>
 				<AlternativesContainer valuesArray={minusArray} />
 			</View>
@@ -59,6 +63,13 @@ const MinusNumbers = (props) => {
 }
 
 const styles = StyleSheet.create({
+	screen: {
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'space-between',
+		backgroundColor: colors.pink,
+	},
+
 	buttonContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-evenly',

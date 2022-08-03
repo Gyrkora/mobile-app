@@ -1,31 +1,51 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import colors from '../../constants/colors'
 
 const AddContainer = (props) => {
+	const { height, width } = useWindowDimensions()
+
 	return (
-		<View style={{ ...styles.container, ...props.style }}>
-			<View style={{ ...styles.addedContainer }}>
-				<Text style={styles.added}> {props.randomValue1}</Text>
-			</View>
-			<View>
-				<Text style={{ ...styles.sumaSymbol }}>{props.symbol}</Text>
-			</View>
-			<View style={{ ...styles.addedContainer }}>
-				<Text style={styles.added}> {props.randomValue2}</Text>
+		<View>
+			<Text style={styles.title}>{props.title}</Text>
+
+			<View
+				style={{
+					...styles.container,
+					...props.style,
+					marginBottom: height > 600 ? 60 : 20,
+					width: width * 0.9,
+				}}
+			>
+				<View style={{ ...styles.addedContainer }}>
+					<Text style={styles.added}> {props.randomValue1}</Text>
+				</View>
+				<View>
+					<Text style={{ ...styles.sumaSymbol }}>{props.symbol}</Text>
+				</View>
+				<View style={{ ...styles.addedContainer }}>
+					<Text style={styles.added}> {props.randomValue2}</Text>
+				</View>
 			</View>
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
+	title: {
+		fontSize: 20,
+		color: colors.blue,
+		textAlign: 'center',
+		marginTop: 10,
+		fontFamily: 'EducSemibold',
+	},
+
 	container: {
 		flexDirection: 'row',
 		backgroundColor: colors.beige,
 		justifyContent: 'space-evenly',
 		alignContent: 'center',
 		padding: 30,
-		marginTop: 40,
-		marginBottom: 60,
+		marginTop: 10,
 		borderRadius: 10,
 	},
 
@@ -35,7 +55,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		textAlign: 'center',
 		margin: 7,
-		// backgroundColor:
 		backgroundColor: colors.pink,
 		borderRadius: 10,
 	},
@@ -53,6 +72,7 @@ const styles = StyleSheet.create({
 	added: {
 		color: colors.beige,
 		fontSize: 30,
+		fontFamily: 'EducBold',
 	},
 })
 

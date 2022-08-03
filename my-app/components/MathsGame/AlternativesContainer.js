@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
 		paddingBottom: 10,
 		textAlign: 'center',
 		alignItems: 'center',
+		fontFamily: 'EducSemibold',
 	},
 })
 

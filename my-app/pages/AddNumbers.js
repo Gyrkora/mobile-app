@@ -24,6 +24,7 @@ const AddNumbers = (props) => {
 					randomValue1={randomValue1}
 					randomValue2={randomValue2}
 					symbol={'+'}
+					title={'Suma'}
 				/>
 			</View>
 
