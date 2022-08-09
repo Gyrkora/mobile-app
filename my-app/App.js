@@ -6,6 +6,8 @@ import colors from './constants/colors'
 import MinusNumbers from './pages/MinusNumbers'
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
+import MathGames from './pages/MathGames'
+import AppNavigation from './navigation/AppNavigation'
 
 export default function App() {
 	const [loaded] = useFonts({
@@ -14,30 +16,12 @@ export default function App() {
 		EducRegular: require('./assets/fonts/EduVICWANTBeginner-Regular.ttf'),
 		EducSemibold: require('./assets/fonts/EduVICWANTBeginner-SemiBold.ttf'),
 	})
-	const [answer, setAnswer] = useState()
-	let score = 0
-
-	let content = (
-		<AddNumbers setAnswer={setAnswer} answer={answer} score={score} />
-	)
-
-	if (answer) {
-		score += 1
-		content = (
-			<MinusNumbers score={score} setAnswer={setAnswer} answer={answer} />
-		)
-	}
 
 	if (!loaded) {
 		return <AppLoading />
 	}
 
-	return (
-		<View>
-			<Text style={styles.header}>Practica matemáticas</Text>
-			{content}
-		</View>
-	)
+	return <AppNavigation />
 }
 
 const styles = StyleSheet.create({
