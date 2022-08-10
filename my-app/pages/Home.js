@@ -4,7 +4,7 @@ import colors from '../constants/colors'
 const Home = ({ navigation }) => {
 	return (
 		<View style={styles.screen}>
-			<Text style={{ fontSize: 40 }}>Home sweet Home</Text>
+			<Text style={{ fontSize: 40, marginTop: 15 }}>Welcome 🤓</Text>
 
 			<View style={styles.screenContainer}>
 				<TouchableOpacity
@@ -12,13 +12,15 @@ const Home = ({ navigation }) => {
 					onPress={() => navigation.navigate('MathGames')}
 				>
 					<Text style={styles.text}>Mathgames</Text>
+					<Text style={styles.subtitle}>Practica lógica</Text>
 				</TouchableOpacity>
 
 				<TouchableOpacity
 					style={styles.button}
-					onPress={() => navigation.navigate('Worterbuck')}
+					onPress={() => navigation.navigate('Worterbuch')}
 				>
 					<Text style={styles.text}>Wörterbuch</Text>
+					<Text style={styles.subtitle}>Deutsch üben</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
@@ -51,6 +53,13 @@ const styles = StyleSheet.create({
 		color: colors.pink,
 		fontWeight: 'bold',
 		fontSize: 20,
+	},
+
+	subtitle: {
+		color: colors.blue,
+		fontWeight: 'bold',
+		fontSize: 15,
+		textAlign: 'center',
 	},
 })
 
