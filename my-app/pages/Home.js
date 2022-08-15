@@ -1,28 +1,33 @@
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
+import GridItem from '../components/GridItem'
+import HomeCard from '../components/HomeCard'
 import colors from '../constants/colors'
+import { CATEGORIES } from '../data/categories'
 
 const Home = ({ navigation }) => {
+	const handleSelectedCategory = (item) => {
+		navigation.navigate(item.route, {
+			categoryId: item.id,
+			name: item.title,
+		})
+	}
+
+	const renderGridItem = ({ item }) => (
+		<GridItem item={item} onSelected={handleSelectedCategory} />
+		// <HomeCard item={item} onSelected={handleSelectedCategory} />
+	)
+
 	return (
-		<View style={styles.screen}>
-			<Text style={{ fontSize: 40, marginTop: 15 }}>Welcome 🤓</Text>
+		<View>
+			<Text style={{ fontSize: 40, marginTop: 15, textAlign: 'center' }}>
+				Welcome 🤓
+			</Text>
 
-			<View style={styles.screenContainer}>
-				<TouchableOpacity
-					style={styles.button}
-					onPress={() => navigation.navigate('MathGames')}
-				>
-					<Text style={styles.text}>Mathgames</Text>
-					<Text style={styles.subtitle}>Practica lógica</Text>
-				</TouchableOpacity>
-
-				<TouchableOpacity
-					style={styles.button}
-					onPress={() => navigation.navigate('Worterbuch')}
-				>
-					<Text style={styles.text}>Wörterbuch</Text>
-					<Text style={styles.subtitle}>Deutsch üben</Text>
-				</TouchableOpacity>
-			</View>
+			<FlatList
+				data={CATEGORIES}
+				keyExtractor={(item) => item.id}
+				renderItem={renderGridItem}
+			/>
 		</View>
 	)
 }
@@ -34,7 +39,7 @@ const styles = StyleSheet.create({
 	},
 
 	screenContainer: {
-		flexDirection: 'row',
+		flexDirection: 'column',
 		justifyContent: 'space-evenly',
 		alignItems: 'center',
 		marginTop: 30,
@@ -64,3 +69,31 @@ const styles = StyleSheet.create({
 })
 
 export default Home
+
+{
+	/* <View style={styles.screenContainer}>
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => navigation.navigate('MathGames')}
+				>
+					<Text style={styles.text}>Mathgames</Text>
+					<Text style={styles.subtitle}>Practica lógica</Text>
+				</TouchableOpacity>
+
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => navigation.navigate('Worterbuch')}
+				>
+					<Text style={styles.text}>Wörterbuch</Text>
+					<Text style={styles.subtitle}>Deutsch üben</Text>
+				</TouchableOpacity>
+
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => navigation.navigate('Match')}
+				>
+					<Text style={styles.text}>Match</Text>
+					<Text style={styles.subtitle}>Match it all</Text>
+				</TouchableOpacity>
+			</View> */
+}

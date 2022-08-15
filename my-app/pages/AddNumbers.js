@@ -8,6 +8,7 @@ import { RandomNum } from '../functions/numbers'
 const AddNumbers = (props) => {
 	const randomValue1 = Math.floor(Math.random() * 900)
 	const randomValue2 = Math.floor(Math.random() * 900)
+
 	function suma() {
 		let suma = randomValue1 + randomValue2
 		return suma
