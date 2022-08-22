@@ -22,6 +22,13 @@ export const CATEGORIES = [
 		route: 'Match',
 		color: colors.pink,
 	},
+	{
+		id: '4',
+		title: 'The Shop 🛒',
+		backgroundColor: colors.beige,
+		route: 'Shop',
+		color: colors.pink,
+	},
 	// {
 	// 	id: '4',
 	// 	title: 'Fill in the blank',

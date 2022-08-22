@@ -19,14 +19,13 @@ const Home = ({ navigation }) => {
 
 	return (
 		<View>
-			<Text style={{ fontSize: 40, marginTop: 15, textAlign: 'center' }}>
-				Welcome 🤓
-			</Text>
+			<Text style={styles.title}>Welcome 🤓</Text>
 
 			<FlatList
 				data={CATEGORIES}
 				keyExtractor={(item) => item.id}
 				renderItem={renderGridItem}
+				numColumns={2}
 			/>
 		</View>
 	)
@@ -54,10 +53,11 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		margin: 5,
 	},
-	text: {
-		color: colors.pink,
-		fontWeight: 'bold',
-		fontSize: 20,
+	title: {
+		fontSize: 40,
+		marginTop: 15,
+		textAlign: 'center',
+		marginBottom: 15,
 	},
 
 	subtitle: {

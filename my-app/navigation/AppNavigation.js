@@ -7,6 +7,8 @@ import MatchCategories from '../pages/MatchCategories'
 import MatchImage from '../pages/MatchImage'
 import MatchWord from '../pages/MatchWord'
 import MatchSound from '../pages/MatchSound'
+import Shop from '../pages/Shop'
+import ShopGame from '../pages/ShopGame'
 
 const Stack = createNativeStackNavigator()
 
@@ -21,6 +23,7 @@ const AppNavigation = () => {
 				<Stack.Screen name="MatchImage" component={MatchImage} />
 				<Stack.Screen name="MatchWord" component={MatchWord} />
 				<Stack.Screen name="MatchSound" component={MatchSound} />
+				<Stack.Screen name="Shop" component={ShopGame} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	)
