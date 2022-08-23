@@ -1,4 +1,10 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import {
+	FlatList,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View,
+} from 'react-native'
 
 function List(props) {
 	const { itemList, onHandlerModal } = props

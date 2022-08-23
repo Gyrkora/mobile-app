@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
 		padding: 20,
 		justifyContent: 'space-between',
 		flexDirection: 'column',
+		height: '100%',
 		// backgroundColor: '#FFD2A6',
 	},
 	title: {

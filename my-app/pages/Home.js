@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
 	)
 
 	return (
-		<View>
+		<View style={styles.screen}>
 			<Text style={styles.title}>Welcome 🤓</Text>
 
 			<FlatList
@@ -33,8 +33,9 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
 	screen: {
-		justifyContent: 'center',
-		alignItems: 'center',
+		// flex: 1,
+		// justifyContent: 'center',
+		// alignItems: 'center',
 	},
 
 	screenContainer: {
