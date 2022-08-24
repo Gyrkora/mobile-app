@@ -44,7 +44,7 @@ const TabNavigator = () => {
 								size={24}
 								color={focused ? 'blue' : 'black'}
 							/>
-							<Text>Tienda</Text>
+							<Text>Carrito</Text>
 						</View>
 					),
 				}}
