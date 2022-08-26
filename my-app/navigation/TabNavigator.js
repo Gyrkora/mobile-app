@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs' //botto
 import ShopNavigator from './ShopNavigator'
 import CartNavigator from './CartNavigator' //navegador
 import { Ionicons } from '@expo/vector-icons' //iconos
+import ShoppingListNavigator from './ShoppingListNavigator'
 
 const BottomTabs = createBottomTabNavigator()
 
@@ -16,6 +17,22 @@ const TabNavigator = () => {
 				tabBarStyle: styles.tabBar,
 			}}
 		>
+			<BottomTabs.Screen
+				name="ShopList"
+				component={ShoppingListNavigator}
+				options={{
+					tabBarIcon: ({ focused }) => (
+						<View style={styles.item}>
+							<Ionicons
+								name="list"
+								size={24}
+								color={focused ? 'blue' : 'black'}
+							/>
+							<Text>Your list</Text>
+						</View>
+					),
+				}}
+			/>
 			<BottomTabs.Screen
 				name="ShopTab"
 				component={ShopNavigator}

@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import colors from '../constants/colors'
 
 const GridItem = ({ item, onSelected }) => {
 	return (

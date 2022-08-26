@@ -1,12 +1,5 @@
-import {
-	View,
-	Text,
-	StyleSheet,
-	TouchableOpacity,
-	FlatList,
-} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
-// import ShopProducts from './ShopProducts'
 import { products as shopProducts } from '../../data/products'
 import colors from '../../constants/colors'
 
@@ -46,6 +39,7 @@ const ShopItems = ({ item }) => {
 const styles = StyleSheet.create({
 	screen: {
 		marginBottom: 15,
+		// height: '60%',
 	},
 
 	questionContainer: {
@@ -67,6 +61,7 @@ const styles = StyleSheet.create({
 
 	button: {
 		borderColor: colors.blue,
+		borderRadius: 10,
 		borderWidth: 1,
 		padding: 5,
 		marginVertical: 15,
