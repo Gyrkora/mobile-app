@@ -4,6 +4,8 @@ import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
 import MathGames from './pages/MathGames'
 import AppNavigation from './navigation/AppNavigation'
+import store from './store'
+import { Provider } from 'react-redux'
 
 export default function App() {
 	const [loaded] = useFonts({
@@ -17,7 +19,11 @@ export default function App() {
 		return <AppLoading />
 	}
 
-	return <AppNavigation />
+	return (
+		<Provider store={store}>
+			<AppNavigation />
+		</Provider>
+	)
 }
 
 const styles = StyleSheet.create({

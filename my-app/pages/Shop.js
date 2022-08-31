@@ -4,8 +4,13 @@ import { products as shopData } from '../data/products'
 import ShopItems from '../components/shopGame/ShopItems'
 import colors from '../constants/colors'
 
+//redux
+import { useSelector, useDispatch } from 'react-redux'
+
 const Shop = () => {
-	const products = shopData
+	// const products = shopData
+
+	const products = useSelector((state) => state.products.productss)
 
 	const renderItem = (data) => <ShopItems item={data.item} />
 
@@ -25,9 +30,6 @@ const Shop = () => {
 
 const styles = StyleSheet.create({
 	screen: {
-		// flex: 1,
-		// justifyContent: 'center',
-		// alignItems: 'center',
 		marginTop: 30,
 	},
 
