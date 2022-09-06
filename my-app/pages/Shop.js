@@ -1,27 +1,35 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native'
-import React from 'react'
-import { products as shopData } from '../data/products'
-import ShopItems from '../components/shopGame/ShopItems'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 import colors from '../constants/colors'
-
-//redux
 import { useSelector, useDispatch } from 'react-redux'
+import GridItem from '../components/GridItem'
+import { selectShopCategory } from '../store/actions/shopCategory.action'
 
-const Shop = () => {
-	// const products = shopData
+const Shop = ({ navigation }) => {
+	const dispatch = useDispatch()
+	const shopCategories = useSelector(
+		(state) => state.shopCategory.shopCategories
+	)
 
-	const products = useSelector((state) => state.products.productss)
+	const handleSelectedCategory = (item) => {
+		dispatch(selectShopCategory(item.id))
+		navigation.navigate('ShopProducts', {
+			name: item.title,
+		})
+	}
 
-	const renderItem = (data) => <ShopItems item={data.item} />
+	const renderItem = ({ item }) => (
+		<GridItem item={item} onSelected={handleSelectedCategory} />
+	)
 
 	return (
 		<View style={styles.screen}>
 			<Text style={styles.title}>La Compra 🏠</Text>
 			<View style={styles.list}>
 				<FlatList
-					data={products}
+					data={shopCategories}
 					keyExtractor={(item) => item.id}
 					renderItem={renderItem}
+					numColumns={2}
 				/>
 			</View>
 		</View>

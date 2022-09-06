@@ -9,6 +9,7 @@ import MatchWord from '../pages/MatchWord'
 import MatchSound from '../pages/MatchSound'
 import Shop from '../pages/Shop'
 import ShopGame from '../pages/ShopGame'
+import ShopProducts from '../pages/ShopProducts'
 
 const Stack = createNativeStackNavigator()
 

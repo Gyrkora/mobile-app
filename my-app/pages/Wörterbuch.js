@@ -19,6 +19,7 @@ const Worterbuch = () => {
 			...currentItems,
 			{
 				id: Math.floor(Math.random() * Date.now()),
+				//dispatch(SaveItem(textItem, definition))
 				value: textItem,
 				definition: definition,
 			},

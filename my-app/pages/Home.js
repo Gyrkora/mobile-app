@@ -32,7 +32,9 @@ const Home = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
-	screen: {},
+	screen: {
+		flex: 1,
+	},
 
 	screenContainer: {
 		flexDirection: 'column',
