@@ -3,10 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Worterbuch from '../pages/Wörterbuch'
 import Home from '../pages/Home'
 import MathGames from '../pages/MathGames'
-// import MatchCategories from '../pages/MatchCategories'
-// import MatchImage from '../pages/MatchImage'
-// import MatchWord from '../pages/MatchWord'
-// import MatchSound from '../pages/MatchSound'
+
 import ShopGame from '../pages/ShopGame'
 import AllPlaces from '../pages/AllPlaces'
 import AddPlaces from '../pages/AddPlaces'
@@ -15,7 +12,6 @@ import colors from '../constants/colors'
 import Map from '../pages/Map'
 import PlacesDetails from '../pages/PlacesDetails'
 import AddNumbers from '../pages/AddNumbers'
-import MinusNumbers from '../pages/MinusNumbers'
 
 const Stack = createNativeStackNavigator()
 
@@ -39,7 +35,6 @@ const AppNavigation = () => {
 					}}
 				/>
 				<Stack.Screen name="AddNumbers" component={AddNumbers} />
-				<Stack.Screen name="MinusNumbers" component={MinusNumbers} />
 				<Stack.Screen
 					name="Worterbuch"
 					component={Worterbuch}

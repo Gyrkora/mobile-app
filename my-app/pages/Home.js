@@ -17,7 +17,7 @@ const Home = ({ navigation }) => {
 
 	return (
 		<View style={styles.screen}>
-			<Text style={styles.title}> Learn 'n Share </Text>
+			<Text style={styles.title}> 🤓 MultiBrain 🧠</Text>
 
 			<FlatList
 				data={CATEGORIES}
