@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import GridItem from '../components/GridItem'
-import HomeCard from '../components/HomeCard'
 import colors from '../constants/colors'
 import { CATEGORIES } from '../data/categories'
 
@@ -14,7 +13,6 @@ const Home = ({ navigation }) => {
 
 	const renderGridItem = ({ item }) => (
 		<GridItem item={item} onSelected={handleSelectedCategory} />
-		// <HomeCard item={item} onSelected={handleSelectedCategory} />
 	)
 
 	return (

@@ -1,24 +1,43 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { useState } from 'react'
+import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
+import GeneralButton from '../components/GeneralButton'
 import AddContainer from '../components/MathsGame/AddContainer'
 import AlternativesContainer from '../components/MathsGame/AlternativesContainer'
-import TrueFalseContainer from '../components/MathsGame/TrueFalseContainer'
 import colors from '../constants/colors'
 import { RandomNum } from '../functions/numbers'
-colors
 
-const MinusNumbers = (props) => {
+const MinusNumbers = ({ isCorrect, score }) => {
+	const [answer, setAnswer] = useState('')
 	const randomValue1 = Math.floor(Math.random() * 900)
 	const randomValue2 = Math.floor(Math.random() * 900)
 
-	function resta() {
-		let resta = randomValue1 - randomValue2
-		return resta
-	}
+	let resta = randomValue1 - randomValue2
 
 	const random = new RandomNum()
 	const randomValue = random.generateRC(1000)
-	const minus = [randomValue, resta()]
+	const minus = [randomValue, resta]
 	const minusArray = minus[Math.floor(Math.random() * minus.length)]
+
+	const navigation = useNavigation()
+
+	function nextPage() {
+		navigation.navigate('AddNumbers')
+	}
+
+	function isCorrect(suma, result) {
+		if (suma === result) {
+			console.log('iguales')
+			setAnswer('iguales')
+		} else if (suma !== result) {
+			console.log('diferentes, pero correcto')
+
+			setAnswer('diferentes pero correcto')
+		} else {
+			console.log('otro')
+			setAnswer('')
+		}
+	}
 
 	return (
 		<View>
@@ -39,7 +58,7 @@ const MinusNumbers = (props) => {
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => {
-						props.setAnswer(true)
+						isCorrect(resta, minusArray)
 					}}
 				>
 					<Text style={styles.text}>True</Text>
@@ -48,7 +67,7 @@ const MinusNumbers = (props) => {
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => {
-						props.setAnswer(false)
+						isCorrect(resta, minusArray)
 					}}
 				>
 					<Text style={styles.text}>False</Text>
@@ -56,8 +75,9 @@ const MinusNumbers = (props) => {
 			</View>
 
 			<Text style={{ fontSize: 25, textAlign: 'center', marginTop: 30 }}>
-				Tu Puntaje: {props.score}
+				Tu Puntaje: {score}
 			</Text>
+			<GeneralButton onPress={nextPage}>Siguiente</GeneralButton>
 		</View>
 	)
 }

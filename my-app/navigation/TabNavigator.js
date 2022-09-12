@@ -4,6 +4,7 @@ import ShopNavigator from './ShopNavigator'
 import CartNavigator from './CartNavigator' //navegador
 import { Ionicons } from '@expo/vector-icons' //iconos
 import ShoppingListNavigator from './ShoppingListNavigator'
+import colors from '../constants/colors'
 
 const BottomTabs = createBottomTabNavigator()
 
@@ -26,7 +27,7 @@ const TabNavigator = () => {
 							<Ionicons
 								name="list"
 								size={24}
-								color={focused ? 'blue' : 'black'}
+								color={focused ? colors.peach : colors.blue}
 							/>
 							<Text>Your list</Text>
 						</View>
@@ -42,7 +43,7 @@ const TabNavigator = () => {
 							<Ionicons
 								name="md-home"
 								size={24}
-								color={focused ? 'blue' : 'black'}
+								color={focused ? colors.peach : colors.blue}
 							/>
 							<Text>Tienda</Text>
 						</View>
@@ -59,7 +60,7 @@ const TabNavigator = () => {
 							<Ionicons
 								name="md-cart"
 								size={24}
-								color={focused ? 'blue' : 'black'}
+								color={focused ? colors.peach : colors.blue}
 							/>
 							<Text>Carrito</Text>
 						</View>

@@ -7,7 +7,7 @@ const TrueFalseContainer = (props) => {
 			<TouchableOpacity
 				style={styles.button}
 				onPress={() => {
-					props.setAnswer(true)
+					props.isCorrect()
 				}}
 			>
 				<Text style={styles.text}>True</Text>
@@ -16,7 +16,7 @@ const TrueFalseContainer = (props) => {
 			<TouchableOpacity
 				style={styles.button}
 				onPress={() => {
-					props.setAnswer(false)
+					props.isCorrect()
 				}}
 			>
 				<Text style={styles.text}>False</Text>

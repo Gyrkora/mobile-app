@@ -14,6 +14,8 @@ import IconButton from '../components/IconButton'
 import colors from '../constants/colors'
 import Map from '../pages/Map'
 import PlacesDetails from '../pages/PlacesDetails'
+import AddNumbers from '../pages/AddNumbers'
+import MinusNumbers from '../pages/MinusNumbers'
 
 const Stack = createNativeStackNavigator()
 
@@ -36,6 +38,8 @@ const AppNavigation = () => {
 						title: 'Prueba tus Matemáticas',
 					}}
 				/>
+				<Stack.Screen name="AddNumbers" component={AddNumbers} />
+				<Stack.Screen name="MinusNumbers" component={MinusNumbers} />
 				<Stack.Screen
 					name="Worterbuch"
 					component={Worterbuch}
@@ -43,10 +47,7 @@ const AppNavigation = () => {
 						title: 'Tu Diccionario',
 					}}
 				/>
-				{/* <Stack.Screen name="Match" component={MatchCategories} />
-				<Stack.Screen name="MatchImage" component={MatchImage} />
-				<Stack.Screen name="MatchWord" component={MatchWord} />
-				<Stack.Screen name="MatchSound" component={MatchSound} /> */}
+
 				<Stack.Screen
 					name="Shop"
 					component={ShopGame}

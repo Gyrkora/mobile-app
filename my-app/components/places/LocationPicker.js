@@ -111,12 +111,12 @@ const LocationPicker = ({ onPickLocation }) => {
 const styles = StyleSheet.create({
 	mapPreview: {
 		width: '100%',
-		height: 200,
+		height: 150,
 		marginVertical: 8,
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: colors.peach,
-		borderRadius: 4,
+		borderRadius: 10,
 		overflow: 'hidden',
 	},
 
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
+		paddingBottom: 8,
 	},
 
 	image: {

@@ -1,6 +1,8 @@
 import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
+import colors from '../../constants/colors'
 import { addItem } from '../../store/actions/cart.action'
+import GeneralButton from '../GeneralButton'
 
 const ShopItems = ({ item, onSelected }) => {
 	const dispatch = useDispatch()
@@ -26,8 +28,13 @@ const ShopItems = ({ item, onSelected }) => {
 					>
 						${item.price}
 					</Text>
+
 					<Text>Id: {item.id}</Text>
-					<Button title="Agregar al carrito" onPress={handlerAddItemCart} />
+
+					<TouchableOpacity style={styles.button} onPress={handlerAddItemCart}>
+						<Text style={styles.buttonText}>Agregar al carrito</Text>
+					</TouchableOpacity>
+					{/* <Button title="Agregar al carrito" onPress={handlerAddItemCart} /> */}
 				</View>
 			</TouchableOpacity>
 		</View>
@@ -40,19 +47,32 @@ const styles = StyleSheet.create({
 		borderRadius: 6,
 		margin: 15,
 		height: 150,
+		backgroundColor: colors.beige,
 	},
 
 	container: {
 		flex: 1,
 		borderRadius: 6,
 		shadowColor: 'black',
-		shadowOpacity: 0.26,
-		shadowOffset: { width: 0, height: 2 },
-		shadowRadius: 6,
-		elevation: 3,
+		borderWidth: 2,
+		borderColor: colors.pink,
 		justifyContent: 'center',
 		alignItems: 'center',
 		padding: 8,
+	},
+
+	button: {
+		borderWidth: 1,
+		borderColor: colors.blue,
+		padding: 4,
+		textAlign: 'center',
+		borderRadius: 5,
+		backgroundColor: colors.peach,
+	},
+
+	buttonText: {
+		textAlign: 'center',
+		color: colors.blue,
 	},
 
 	title: {

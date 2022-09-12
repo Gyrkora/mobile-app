@@ -2,10 +2,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import colors from '../../constants/colors'
 
 const AlternativesContainer = (props) => {
-	const prueba = () => {
-		console.log('funciona sin button')
-	}
-
 	return (
 		<View style={styles.container}>
 			<View style={styles.altContainer}>

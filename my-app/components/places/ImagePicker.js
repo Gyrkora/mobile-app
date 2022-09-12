@@ -68,12 +68,12 @@ const ImagePicker = ({ onTakeImage }) => {
 const styles = StyleSheet.create({
 	imagePreview: {
 		width: '100%',
-		height: 200,
+		height: 150,
 		marginVertical: 8,
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: colors.peach,
-		borderRadius: 4,
+		borderRadius: 10,
 		overflow: 'hidden',
 	},
 

@@ -8,6 +8,7 @@ import {
 import CartItem from '../components/shopGame/CartItem'
 import { useSelector, useDispatch } from 'react-redux'
 import { confirmCart, removeItem } from '../store/actions/cart.action'
+import colors from '../constants/colors'
 
 const Cart = () => {
 	const dispatch = useDispatch()
@@ -30,7 +31,7 @@ const Cart = () => {
 
 			<View style={styles.footer}>
 				<TouchableOpacity style={styles.confirm} onPress={handlerConfirmCart}>
-					<Text>Confirmar</Text>
+					<Text style={{ color: 'white' }}>Confirmar</Text>
 					<View>
 						<Text style={styles.text}>Total</Text>
 						<Text style={styles.text}>{total}</Text>
@@ -53,12 +54,12 @@ const styles = StyleSheet.create({
 	},
 	footer: {
 		padding: 12,
-		borderTopColor: '#ccc',
+		borderTopColor: colors.pink,
 		borderTopWidth: 1,
 	},
 
 	confirm: {
-		backgroundColor: '#ccc',
+		backgroundColor: colors.pink,
 		borderRadius: 10,
 		padding: 10,
 		flexDirection: 'row',
@@ -72,6 +73,7 @@ const styles = StyleSheet.create({
 
 	text: {
 		fontSize: 18,
+		color: 'white',
 		// fontFamily: 'OpenSansBold',
 		padding: 8,
 	},
