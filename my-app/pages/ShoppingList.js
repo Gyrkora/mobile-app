@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import ShoppingListItem from '../components/shopGame/ShoppingListItem'
 
 const ShoppingList = () => {
 	return (
-		<View>
+		<ScrollView>
 			<ShoppingListItem />
-		</View>
+		</ScrollView>
 	)
 }
 

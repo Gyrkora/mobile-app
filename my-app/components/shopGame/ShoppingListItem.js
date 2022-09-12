@@ -1,6 +1,6 @@
 import { shoppingList } from '../../data/shoppingList'
 
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import colors from '../../constants/colors'
 
 const ShoppingListItem = () => {
@@ -32,6 +32,7 @@ const ShoppingListItem = () => {
 const styles = StyleSheet.create({
 	screen: {
 		justifyContent: 'space-evenly',
+		alignItems: 'center',
 	},
 
 	title: {
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		color: colors.pink,
 		marginTop: 10,
+		marginBottom: 15,
 	},
 
 	listContainer: {
@@ -69,8 +71,8 @@ const styles = StyleSheet.create({
 	},
 
 	listItem: {
-		marginVertical: 15,
-		fontSize: 21,
+		marginVertical: 10,
+		fontSize: 20,
 		fontFamily: 'EducRegular',
 		color: colors.blue,
 	},
