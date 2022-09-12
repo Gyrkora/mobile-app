@@ -6,8 +6,12 @@ import MathGames from './pages/MathGames'
 import AppNavigation from './navigation/AppNavigation'
 import store from './store'
 import { Provider } from 'react-redux'
+import { useEffect } from 'react'
+import { init } from './data/database'
+import { useState } from 'react'
 
 export default function App() {
+	const [dbInitialized, setDbInitialized] = useState(false)
 	const [loaded] = useFonts({
 		EducBold: require('./assets/fonts/EduVICWANTBeginner-Bold.ttf'),
 		EducMedium: require('./assets/fonts/EduVICWANTBeginner-Medium.ttf'),
@@ -15,7 +19,17 @@ export default function App() {
 		EducSemibold: require('./assets/fonts/EduVICWANTBeginner-SemiBold.ttf'),
 	})
 
-	if (!loaded) {
+	useEffect(() => {
+		init()
+			.then(() => {
+				setDbInitialized(true)
+			})
+			.catch((err) => {
+				console.log(err)
+			})
+	}, [])
+
+	if (!loaded || !dbInitialized) {
 		return <AppLoading />
 	}
 

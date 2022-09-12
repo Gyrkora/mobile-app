@@ -12,6 +12,8 @@ import AllPlaces from '../pages/AllPlaces'
 import AddPlaces from '../pages/AddPlaces'
 import IconButton from '../components/IconButton'
 import colors from '../constants/colors'
+import Map from '../pages/Map'
+import PlacesDetails from '../pages/PlacesDetails'
 
 const Stack = createNativeStackNavigator()
 
@@ -71,6 +73,15 @@ const AppNavigation = () => {
 					name="AddPlaces"
 					component={AddPlaces}
 					options={{ title: 'Agrega un Nuevo Lugar' }}
+				/>
+				<Stack.Screen name="Map" component={Map} />
+
+				<Stack.Screen
+					name="PlaceDetails"
+					component={PlacesDetails}
+					options={{
+						title: 'Cargando lugar...',
+					}}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
